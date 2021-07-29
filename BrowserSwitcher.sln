@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31512.422
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrowserSwitcher", "BrowserSwitcher\BrowserSwitcher.csproj", "{CBFF4150-64CA-44EA-BB32-27CCF91176CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrowserSwitcher.Mediator", "BrowserSwitcher.Mediator\BrowserSwitcher.Mediator.csproj", "{05844E34-0686-4F9B-98FD-F4BDA6A49061}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CBFF4150-64CA-44EA-BB32-27CCF91176CC} = {CBFF4150-64CA-44EA-BB32-27CCF91176CC}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBFF4150-64CA-44EA-BB32-27CCF91176CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBFF4150-64CA-44EA-BB32-27CCF91176CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBFF4150-64CA-44EA-BB32-27CCF91176CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBFF4150-64CA-44EA-BB32-27CCF91176CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05844E34-0686-4F9B-98FD-F4BDA6A49061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05844E34-0686-4F9B-98FD-F4BDA6A49061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05844E34-0686-4F9B-98FD-F4BDA6A49061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05844E34-0686-4F9B-98FD-F4BDA6A49061}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8128B586-6F6A-4971-B942-603E1D7F7FE7}
+	EndGlobalSection
+EndGlobal
