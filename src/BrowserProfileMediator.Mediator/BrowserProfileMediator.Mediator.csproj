@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="..\BrowserSwitcher\**\*.proto" Link="%(RecursiveDir)%(Filename)%(Extension)" />
+    <Protobuf Include="..\BrowserProfileMediator\**\*.proto" Link="%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
 
 </Project>
