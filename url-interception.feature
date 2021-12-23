@@ -11,3 +11,9 @@ Feature: URL Interception
     Given the application has shows a popup with Edge and Chrome
     When the user selects Edge
     Then the application will open the URL with Edge
+
+  @WBPM-1 @MANUAL
+  Scenario: URL Redirection to Chrome
+    Given the application has shows a popup with Edge and Chrome
+    When the user selects Chrome
+    Then the application will open the URL with Chrome
