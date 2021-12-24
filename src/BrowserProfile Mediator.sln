@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.31512.422
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrowserProfileMediator", "BrowserProfileMediator\BrowserProfileMediator.csproj", "{04D28295-1D7E-4C0F-8B8B-0DAE71A53605}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrowserProfileMediator.Mediator", "BrowserProfileMediator.Mediator\BrowserProfileMediator.Mediator.csproj", "{2B0A6325-2DE9-455C-B86C-5FEF6D70A8B8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{04D28295-1D7E-4C0F-8B8B-0DAE71A53605}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04D28295-1D7E-4C0F-8B8B-0DAE71A53605}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04D28295-1D7E-4C0F-8B8B-0DAE71A53605}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2B0A6325-2DE9-455C-B86C-5FEF6D70A8B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B0A6325-2DE9-455C-B86C-5FEF6D70A8B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B0A6325-2DE9-455C-B86C-5FEF6D70A8B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B0A6325-2DE9-455C-B86C-5FEF6D70A8B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

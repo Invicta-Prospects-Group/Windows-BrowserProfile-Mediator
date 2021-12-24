@@ -6,13 +6,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Grpc.Net.Client;
+using System.Threading;
 
 namespace BrowserSwitcher
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
+            bool onlyInstance = false;
+
+            var mutex = new Mutex(true, "25CFF1DE-DC44-4DFA-8A3C-422840C6B52C", out onlyInstance);
+
+            if (!onlyInstance)
+            {
+                Console.WriteLine("There is already another instance that is running!");
+                await DoIt(args[0]);
+                return;
+            }
+
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -28,5 +41,19 @@ namespace BrowserSwitcher
                     ;
                 })
                 ;
+        public static async Task DoIt(string myVal)
+        {
+            using var channel = GrpcChannel.ForAddress("http://localhost:5000");
+            var client = new Greeter.GreeterClient(channel);
+            var reply = await client.SayHelloAsync(
+                new HelloRequest
+                {
+                    Name = myVal
+                });
+        }
     }
+
+
+
+
 }

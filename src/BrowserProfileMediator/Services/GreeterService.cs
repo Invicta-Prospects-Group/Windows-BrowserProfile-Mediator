@@ -18,6 +18,7 @@ namespace BrowserSwitcher
 
         public override Task<Empty> SayHello(HelloRequest request, ServerCallContext context)
         {
+            Console.WriteLine($"Hello { request.Name}");
             return Task.FromResult(new Empty());
         }
     }
