@@ -1,32 +1,19 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Grpc.Net.Client;
 using System.Threading;
+using System.Threading.Tasks;
+using BrowserProfileMediator.Startup;
+using BrowserSwitcher;
+using Grpc.Net.Client;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
-namespace BrowserSwitcher
+namespace BrowserProfileMediator
 {
     public class Program
     {
         public static async Task Main(string[] args)
         {
-            bool onlyInstance = false;
-
-            var mutex = new Mutex(true, "25CFF1DE-DC44-4DFA-8A3C-422840C6B52C", out onlyInstance);
-
-            if (!onlyInstance)
-            {
-                Console.WriteLine("There is already another instance that is running!");
-                await DoIt(args[0]);
-                return;
-            }
-
-            CreateHostBuilder(args).Build().Run();
+            await new InitialStartupOrchestrator(CreateHostBuilder(args)).StartAsync(args);
         }
 
         // Additional configuration is required to successfully run gRPC on macOS.
@@ -37,10 +24,11 @@ namespace BrowserSwitcher
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder
-                        .UseStartup<Startup>()
+                        .UseStartup<Startup.Startup>()
                     ;
                 })
                 ;
+
         public static async Task DoIt(string myVal)
         {
             using var channel = GrpcChannel.ForAddress("http://localhost:5000");
